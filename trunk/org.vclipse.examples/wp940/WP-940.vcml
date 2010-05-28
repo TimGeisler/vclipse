@@ -1,0 +1,318 @@
+options { ECM = "abc" }
+
+class (300)WP940 {
+  description {
+    DE "Web Phone"
+    EN "Web Phone"
+    ES "Teléfono Web"
+    FR "Téléphone par Internet"
+    JA "Web Phone"
+    PT "Web Phone"
+  }
+  status released
+  characteristics {
+    WP_CONNECTION
+    WP_OPTIONS
+    WP_INSTALL
+    VARIANT_CONDITION_H
+  }
+}
+
+characteristic VARIANT_CONDITION_H {
+  description {
+    DE "Variantenkondition"
+    EN "Variants condition"
+    ES "Condición de variantes"
+    FR "Condition variantes"
+    JA "バリアント条件"
+    PT "Condição de variante"
+  }
+  symbolic {
+    numberOfChars 26
+    values {
+    }
+  }
+  status released
+}
+
+characteristic WP_CONNECTION {
+  description {
+    DE "Übertragungstechnik"
+    EN "Communication technology"
+    ES "Técnica de transmisión"
+    FR "Technique de transfert"
+    JA "通信技術"
+    PT "Técnica de transferência"
+  }
+  symbolic {
+    numberOfChars 3
+    values {
+      '001' {
+        description {
+          DE "Digital"
+          EN "Digital"
+          ES "Digital"
+          FR "Arithmétique dégressif"
+          JA "デジタル"
+          PT "Digital"
+        }
+      }
+      '002' {
+        description {
+          DE "Analog"
+          EN "Analog"
+          ES "Análogo"
+          FR "Analogue"
+          JA "アナログ"
+          PT "Análoga"
+        }
+      }
+      '003' {
+        description {
+          DE "Satellit"
+          EN "Satellite"
+          ES "Satélite"
+          FR "Satellite"
+          JA "サテライト"
+          PT "Satélite"
+        }
+      }
+    }
+  }
+  status released
+}
+
+characteristic WP_INSTALL {
+  description {
+    DE "Web Phone Installation"
+    EN "Web Phone Installation"
+    ES "Instalación teléfono Web"
+    FR "Install. téléph. par Internet"
+    JA "Web Phone 設置"
+    PT "Instalação web phone"
+  }
+  symbolic {
+    numberOfChars 1
+    values {
+      'N' {
+        description {
+          DE "Nein"
+          EN "No"
+          ES "No"
+          FR "Non"
+          JA "いいえ"
+          PT "Não"
+        }
+      }
+      'Y' {
+        description {
+          DE "Ja"
+          EN "Yes"
+          ES "Sí"
+          FR "Oui"
+          JA "はい"
+          PT "Sim"
+        }
+      }
+    }
+  }
+  status released
+}
+
+characteristic WP_OPTIONS {
+  description {
+    DE "Web Phone Optionen"
+    EN "Web Phone Options"
+    ES "Opciones teléfono Web"
+    FR "Options téléphone par Internet"
+    JA "Web Phone オプション"
+    PT "Opções web phone"
+  }
+  documentation {
+    DE "Web Phone Optionen"
+    EN "Web Phone Options"
+    ES "Opciones teléfono Web"
+    FR "Options téléphone par Internet"
+    JA "Web Phone オプション"
+    PT "Opções web phone"
+  }
+  symbolic {
+    numberOfChars 3
+    values {
+      '001' {
+        description {
+          DE "Anschlusskabel fuer Monitor"
+          EN "Cable for connecting monitor"
+          ES "Cable de conexión para monitor"
+          FR "Câble de l'écran"
+          JA "モニタ接続用のケーブル"
+          PT "Cabo de conexão para monitor"
+        }
+      }
+      '002' {
+        description {
+          DE "Anrufbeantworter"
+          EN "Voice mail"
+          ES "Contestad.autom."
+          FR "Répondeur"
+          JA "ボイスメール"
+          PT "Secr.eletrônica"
+        }
+      }
+      '003' {
+        description {
+          DE "Kamera"
+          EN "Camera"
+          ES "Cámara"
+          FR "Appareil photographique"
+          JA "カメラ"
+          PT "Câmara"
+        }
+      }
+      '004' {
+        description {
+          DE "Zusatzantenne"
+          EN "Additional Antenna"
+          ES "Antena adicional"
+          FR "Antenne supplémentaire"
+          JA "追加のアンテナ"
+          PT "Antena adicional"
+        }
+      }
+      '005' {
+        description {
+          DE "Speicherupgrade"
+          EN "Memory Upgrade"
+          ES "Upgrade de memoria"
+          FR "Extension de mémoire"
+          JA "メモリアップグレード"
+          PT "Mudança release memória"
+        }
+        dependencies {
+          WP_MEMORY_UPGRADE
+        }
+      }
+      '006' {
+        description {
+          DE "Selbstreinigender Bildschirm"
+          EN "Self-Cleaning Screen"
+          ES "Pantalla autolimpiante"
+          FR "Ecran autonettoyant"
+          JA "セルフクリーニングスクリーン"
+          PT "Tela de limpeza automática"
+        }
+      }
+    }
+  }
+  status released
+}
+
+characteristic WP_SCREEN {
+  description {
+    DE "Bildschirm"
+    EN "Screen"
+    ES "Pantalla"
+    FR "Ecran"
+    JA "画面"
+    PT "Tela"
+  }
+  symbolic {
+    numberOfChars 3
+    values {
+      '001' {
+        description {
+          DE "LCD Bildschirm"
+          EN "LCD Screen"
+          ES "Pantalla LCD"
+          FR "Ecran à cristaux liquides"
+          JA "液晶ディスプレイ"
+          PT "Tela LCD"
+        }
+      }
+      '002' {
+        description {
+          DE "Touch Screen"
+          EN "Touch Screen"
+          ES "Pantalla táctil"
+          FR "Ecran tactile"
+          JA "タッチスクリーン"
+          PT "Tela sensível ao toque"
+        }
+      }
+    }
+  }
+  status released
+}
+
+procedure WP_ANTENNA_SET {
+  description {
+    DE "Satellite Connection"
+    EN "Satellite connection"
+    ES "Conexión por satélite"
+    FR "Connexion satellite"
+    JA "衛星接続"
+    PT "Conexão por satélite"
+  }
+  status released
+  source {
+* satellite connection requires enhanced antenna set
+$self.WP_options = '004'
+if $self.WP_connection = '003'.
+  }
+}
+
+precondition WP_MEMORY_UPGRADE {
+  description {
+    DE "Bedingung Memory Upgrade"
+    EN "Precond. for memory upgrade"
+    ES "Condición upgrade memoria"
+    FR "Condition mise à niv. mémoire"
+    JA "メモリアップグレードの前提条件"
+    PT "Condiç.mudança release memória"
+  }
+  status released
+  source {
+* memory upgrade is only allowed with answering machine
+$self.WP_options specified and
+$self.WP_options = '002'.
+  }
+}
+
+procedure WP_SCRN_TOUCH_CLEAN {
+  description {
+    DE "Touch Screen"
+    EN "Touch Screen"
+    ES "Pantalla táctil"
+    FR "Ecran tactile"
+    JA "タッチ画面"
+    PT "Tela sensível ao toque"
+  }
+  status released
+  source {
+* touch screen requires self cleaning options
+$self.WP_options = '006'
+if $self.WP_screen = '002'.
+  }
+}
+
+material WP-940 {
+  description {
+    DE "Web Phone 940"
+    EN "Web Phone 940"
+    ES "Teléfono web 940"
+    FR "Webphone 940"
+    JA "Web Phone 940"
+    PT "Web Phone 940"
+    RU "Web Phone 940"
+  }
+  type HAWA
+  classes {
+    (300)WP940
+  }
+  configurationprofile 'WEBPHONE' {
+  	bomapplication SD02
+    10 WP_ANTENNA_SET
+    20 WP_SCRN_TOUCH_CLEAN
+  }
+}
+
