@@ -1,0 +1,5 @@
+VClipse is an Eclipse-based integrated development environment (IDE) for product modeling for the [SAP Variant Configurator (VC)](http://help.sap.com/printdocu/core/Print46c/en/Data/pdf/LOVC/LOVC.pdf). VClipse supports the specification of objects and dependencies in a textual domain specific language calld VCML. This enables the use of standard text comparison tools and version control systems in the model development process.
+
+VClipse offers two interfaces SAP systems. The VC objects and dependencies can be transferred to or retrieved from a SAP system using SAP's remote function calls ([RFC](http://en.wikipedia.org/wiki/Remote_Function_Call)). Furthermore, the VC objects and dependencies can be transferred using product data replication (PDR) via [IDocs](http://help.sap.com/saphelp_nw70/helpdata/en/0b/2a6095507d11d18ee90000e8366fc2/frameset.htm).
+
+VClipse is implemented using the [Xtext](http://www.eclipse.org/Xtext/) framework and the [Java Pretty Printer Library](http://jpplib.sourceforge.net/).
